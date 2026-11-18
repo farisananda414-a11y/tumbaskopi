@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <!-- Fitur responsive: lebar halaman mengikuti lebar layar HP -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="TUMBAS COFFE - kedai kopi online. Web e-commerce dengan HTML, CSS, dan JavaScript murni.">
+    <title>Katalog "TUMBAS COFFE"</title>
+
+    <link rel="icon" type="image/png" href="image/logo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ===== MENU HEADER ===== -->
+    <header class="kepala">
+        <div class="wadah kepala-isi">
+            <a href="#/" class="logo" aria-label="TUMBAS COFFE, ke halaman katalog">
+                <img src="image/logo.png" alt="" width="44" height="44">
+                <span class="logo-nama">TUMBAS COFFE</span>
+            </a>
+
+            <form class="cari" id="form-cari" role="search">
+                <label class="hanya-pembaca-layar" for="input-cari">Cari menu</label>
+                <input type="search" id="input-cari" autocomplete="off" placeholder="Cari menu...">
+
+                <button type="submit" class="tombol-cari">
+                    <img src="image/search.png" alt="" width="16" height="16">
+                    <span>Cari</span>
+                </button>
+            </form>
+
+            <nav class="navigasi" aria-label="Navigasi utama">
+                <a href="#/keranjang" data-nav="keranjang" class="nav-keranjang">
+                    <img src="image/keranjang.png" alt="" width="20" height="20">
+                    <span>Keranjang</span>
+                    <span id="lencana-keranjang" class="lencana">0</span>
+                </a>
+
+                <a href="#/login" data-nav="login" id="nav-masuk">Masuk</a>
+                <button type="button" id="tombol-keluar">Keluar</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== ISI HALAMAN ===== -->
+    <main class="wadah">
+
+        <!-- ===== MENU KATALOG ===== -->
+        <section id="halaman-katalog">
+            <h1 class="hanya-pembaca-layar">Katalog menu TUMBAS COFFE</h1>
+
+            <div class="tata-katalog">
+                <aside class="sisi" aria-label="Kategori menu">
+                    <h2 class="sisi-judul">
+                        <img src="image/logo.png" alt="" width="16" height="16">
+                        Kategori Menu
+                    </h2>
+
+                    <div class="kategori">
+                        <label class="sisi-item">
+                            <input type="radio" name="kategori" value="semua" checked>
+                            <span>Semua Menu</span>
+                        </label>
+
+                        <label class="sisi-item">
+                            <input type="radio" name="kategori" value="Americano">
+                            <span>Americano</span>
+                        </label>
+
+                        <label class="sisi-item">
+                            <input type="radio" name="kategori" value="Coffee Latte">
+                            <span>Coffee Latte</span>
+                        </label>
+
+                        <label class="sisi-item">
+                            <input type="radio" name="kategori" value="Matcha">
+                            <span>Matcha</span>
+                        </label>
+
+                        <label class="sisi-item">
+                            <input type="radio" name="kategori" value="Chocolate">
+                            <span>Chocolate</span>
+                        </label>
+                    </div>
+                </aside>
+
+                <div class="hasil">
+                    <div class="grid-produk" id="grid-produk">
+                        <!-- Fitur kartu menu 1: Americano single shot -->
+                        <article class="kartu" data-id="1" data-nama="Americano single shot"
+                            data-kategori="Americano" data-harga="13000"
+                            data-deskripsi="Hitam Pekat, Aroma Arabica">
+                            <a class="kartu-tautan" href="#/detail/1">
+                                <div class="kartu-gambar">
+                                    <div class="kartu-bingkai bingkai-foto">
+                                        <img class="foto" src="image/americano.png" alt="Americano">
+                                        <strong class="kartu-label label-foto">Americano</strong>
+                                    </div>
+                                </div>
+
+                                <div class="kartu-isi">
+                                    <h2 class="kartu-nama">Americano single shot</h2>
+                                    <p class="kartu-catatan">Hitam Pekat, Aroma Arabica</p>
+                                </div>
+                            </a>
+
+                            <div class="kartu-bawah">
+                                <p class="harga">Rp 13.000</p>
+                            </div>
+                        </article>
+
+                        <!-- Fitur kartu menu 2: Coffee Latte -->
+                        <article class="kartu" data-id="2" data-nama="Coffee Latte"
+                            data-kategori="Coffee Latte" data-harga="15000"
+                            data-deskripsi="Segar dan Nikmat">
+                            <a class="kartu-tautan" href="#/detail/2">
+                                <div class="kartu-gambar">
+                                    <div class="kartu-bingkai bingkai-foto">
+                                        <img class="foto" src="image/kopi late png.jpg" alt="Coffee Latte" width="45" height="35">
+                                        <strong class="kartu-label label-foto">Coffee Latte</strong>
+                                    </div>
+                                </div>
+
+                                <div class="kartu-isi">
+                                    <h2 class="kartu-nama">Coffee Latte</h2>
+                                    <p class="kartu-catatan">Segar dan Nikmat</p>
+                                </div>
+                            </a>
+
+                            <div class="kartu-bawah">
+                                <p class="harga">Rp 15.000</p>
+                            </div>
+                        </article>
+
+                        <!-- Fitur kartu menu 3: Matcha -->
+                        <article class="kartu" data-id="3" data-nama="Matcha"
+                            data-kategori="Matcha" data-harga="12000"
+                            data-deskripsi="Bubuk teh hijau yang dilarutkan dengan air panas, lalu ditambah campuran cream susu kental dan susu UHT">
+                            <a class="kartu-tautan" href="#/detail/3">
+                                <div class="kartu-gambar">
+                                    <div class="kartu-bingkai bingkai-foto">
+                                        <img class="foto" src="image/matcha.png" alt="Matcha">
+                                        <strong class="kartu-label label-foto">Matcha</strong>
+                                    </div>
+                                </div>
+
+                                <div class="kartu-isi">
+                                    <h2 class="kartu-nama">Matcha</h2>
+                                    <p class="kartu-catatan">Segar dan Nikmat</p>
+                                </div>
+                            </a>
+
+                            <div class="kartu-bawah">
+                                <p class="harga">Rp 12.000</p>
+                            </div>
+                        </article>
+
+                        <!--Fitur kartu menu 4: Chocolate -->
+                        <article class="kartu" data-id="4" data-nama="Chocolate"
+                            data-kategori="Chocolate" data-harga="12000"
+                            data-deskripsi="Bubuk Coklat yang dilarutkan dengan air panas, lalu ditambah campuran cream susu kental dan susu UHT">
+                            <a class="kartu-tautan" href="#/detail/4">
+                                <div class="kartu-gambar">
+                                    <div class="kartu-bingkai bingkai-foto">
+                                        <img class="foto" src="image/chocolate.png" alt="Chocolate" width="72" height="72">
+                                        <strong class="kartu-label label-foto">Chocolate</strong>
+                                    </div>
+                                </div>
+
+                                <div class="kartu-isi">
+                                    <h2 class="kartu-nama">Chocolate</h2>
+                                    <p class="kartu-catatan">Segar dan Nikmat</p>
+                                </div>
+                            </a>
+
+                            <div class="kartu-bawah">
+                                <p class="harga">Rp 12.000</p>
+                            </div>
+                        </article>
+
+                    </div>
+
+                    <p class="kosong" id="katalog-kosong">
+                        Menu tidak ditemukan, coba cari kata lain atau ganti kategori lain.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- ===== MENU LOGIN ===== -->
+        <section id="halaman-login">
+            <div class="masuk">
+                <div class="masuk-visual"></div>
+
+                <form class="masuk-form" id="form-login">
+                    <img class="masuk-logo" src="image/logo.png" alt="" width="160" height="120">
+                    <h1>Selamat datang</h1>
+                    <p class="masuk-info">Masuk ke akunmu untuk melanjutkan.</p>
+
+                    <div class="kolom-isian">
+                        <label for="isian-username">Username</label>
+                        <input type="text" id="isian-username" autocomplete="username" required>
+                        <p class="pesan-galat">Username wajib diisi.</p>
+                    </div>
+
+                    <div class="kolom-isian">
+                        <label for="isian-password">Password</label>
+                        <input type="password" id="isian-password" autocomplete="current-password" required>
+                        <p class="pesan-galat">Password wajib diisi.</p>
+
+                        <p class="pesan-galat" id="login-salah" hidden>
+                            Username atau password salah.
+                        </p>
+                    </div>
+
+                    <button type="submit" class="tombol tombol-utama tombol-lebar tombol-kirim">
+                        Masuk
+                    </button>
+
+                    <a class="masuk-kembali" href="#/">- kembali ke katalog</a>
+                </form>
+            </div>
+        </section>
+
+        <!-- ===== MENU DETAIL MENU ===== -->
+        <section id="halaman-detail">
+            <a class="tautan-kembali" href="#/">- Kembali ke katalog</a>
+
+            <p class="kosong" id="detail-tidak-ada" hidden>Menu tidak ditemukan.</p>
+
+            <article class="detail" id="isi-detail">
+                <div class="detail-gambar">
+                    <img class="foto" id="detail-gambar" src="image/bagian dalam house.png" alt="">
+                </div>
+
+                <div class="detail-info">
+                    <h1 id="detail-nama"></h1>
+                    <p class="detail-deskripsi" id="detail-deskripsi"></p>
+
+                    <div class="kasir" role="group" aria-label="Rincian pesanan">
+                        <div class="kasir-judul">
+                            <span>Item</span>
+                            <span>Jumlah</span>
+                            <span>Subtotal</span>
+                        </div>
+
+                        <div class="kasir-baris">
+                            <div class="kasir-info">
+                                <span class="kasir-nama" id="kasir-nama"></span>
+                                <span class="kasir-harga" id="kasir-harga"></span>
+                            </div>
+
+                            <div class="kasir-jumlah">
+                                <button type="button" id="tombol-kurang" aria-label="kurangi jumlah">-</button>
+
+                                <label class="hanya-pembaca-layar" for="isian-jumlah">Jumlah</label>
+                                <input type="number" id="isian-jumlah" min="1" value="1">
+
+                                <button type="button" id="tombol-tambah" aria-label="Tambah jumlah">+</button>
+                            </div>
+
+                            <span class="kasir-subtotal total-teks"></span>
+                        </div>
+
+                        <div class="kasir-total">
+                            <span>Total bayar</span>
+                            <strong class="total-teks"></strong>
+                        </div>
+                    </div>
+
+                    <div class="detail-aksi">
+                        <button type="button" class="tombol-keranjang" id="tombol-keranjang">
+                            Tambah ke keranjang
+                        </button>
+
+                        <button type="button" class="tombol-pesan" id="tombol-pesan">
+                            <span class="total-teks"></span>
+                            <span>Pesan sekarang</span>
+                        </button>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- ===== MENU KERANJANG ===== -->
+        <section id="halaman-keranjang">
+            <h1 class="judul-halaman">Keranjang</h1>
+
+            <p class="kosong" id="keranjang-kosong">
+                Keranjang masih kosong.
+                <a class="tombol" href="#/">Lihat menu</a>
+            </p>
+
+            <div id="isi-keranjang" hidden>
+                <div id="daftar-keranjang"></div>
+
+                <div class="ringkasan">
+                    <p>
+                        Total bayar
+                        <strong id="total-keranjang"></strong>
+                    </p>
+
+                    <button type="button" class="tombol tombol-utama" id="tombol-checkout">
+                        Lanjut ke checkout
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== MENU CHECKOUT ===== -->
+        <section id="halaman-checkout">
+            <a class="tautan-kembali" href="#/keranjang">- Kembali ke keranjang</a>
+            <h1 class="judul-halaman">Checkout</h1>
+
+            <div class="dua-kolom">
+                <form id="form-checkout">
+                    <section class="kotak" aria-labelledby="judul-data">
+                        <h2 class="kotak-judul" id="judul-data">
+                            <span class="kotak-nomor">1</span>Kontak pemesan
+                        </h2>
+
+                        <div class="baris-isian">
+                            <div class="kolom-isian">
+                                <label for="isian-nama">Nama Lengkap</label>
+                                <input type="text" id="isian-nama" autocomplete="name" required
+                                    pattern="[A-Za-z .`\-]{3,}">
+                                <p class="pesan-galat">
+                                    Nama wajib diisi, minimal 3 huruf (hanya huruf dan spasi).
+                                </p>
+                            </div>
+
+                            <div class="kolom-isian">
+                                <label for="isian-hp">Nomor HP</label>
+                                <input type="tel" id="isian-hp" autocomplete="tel" required
+                                    pattern="(\+62|62|0)8[0-9]{8,11}">
+                                <p class="pesan-galat">
+                                    Nomor HP wajib diisi, angka saja, 08 atau +62.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="kotak" aria-labelledby="judul-kirim">
+                        <h2 class="kotak-judul" id="judul-kirim">
+                            <span class="kotak-nomor">2</span>Alamat pengiriman
+                        </h2>
+
+                        <div class="kolom-isian">
+                            <label for="isian-alamat">Alamat lengkap</label>
+                            <textarea id="isian-alamat" rows="3" autocomplete="street-address" required
+                                minlength="10"></textarea>
+                            <p class="pesan-galat">
+                                Alamat wajib diisi lengkap (minimal 10 karakter).
+                            </p>
+                        </div>
+
+                        <div class="kolom-isian">
+                            <label for="isian-kota">Kecamatan / kota</label>
+                            <input type="text" id="isian-kota" autocomplete="address-level1" required minlength="3">
+                            <p class="pesan-galat">Kecamatan / kota wajib diisi.</p>
+                        </div>
+                    </section>
+
+                    <section class="kotak" aria-labelledby="judul-bayar">
+                        <h2 class="kotak-judul" id="judul-bayar">
+                            <span class="kotak-nomor">3</span>Pembayaran
+                        </h2>
+
+                        <div class="kolom-isian">
+                            <label for="isian-pembayaran">Metode pembayaran</label>
+                            <select id="isian-pembayaran" required>
+                                <option value="">Pilih metode pembayaran</option>
+                                <option value="Tunai di kedai">Tunai di kedai</option>
+                                <option value="QRIS">QRIS</option>
+                                <option value="Transfer bank">Transfer bank</option>
+                            </select>
+                            <p class="pesan-galat">Pilih metode pembayaran.</p>
+                        </div>
+
+                        <div class="kolom-isian">
+                            <label for="isian-catatan">
+                                Catatan <span class="redup">(opsional)</span>
+                            </label>
+                            <textarea id="isian-catatan" rows="2" maxlength="200"></textarea>
+                        </div>
+                    </section>
+                </form>
+
+                <aside class="struk struk-menempel" aria-label="Ringkasan pesanan">
+                    <h2>Ringkasan pesanan</h2>
+
+                    <div class="daftar-ringkas" id="ringkasan-checkout"></div>
+
+                    <div class="struk-baris struk-total">
+                        <span>Total bayar</span>
+                        <span id="checkout-total"></span>
+                    </div>
+
+                    <button type="submit" form="form-checkout"
+                        class="tombol tombol-utama tombol-lebar tombol-kirim">
+                        Buat pesanan
+                    </button>
+                </aside>
+            </div>
+        </section>
+
+        <!-- ===== MENU KONFIRMASI PESANAN ===== -->
+        <section id="halaman-sukses">
+            <p class="kosong" id="sukses-tidak-ada" hidden>
+                Pesanan tidak ditemukan.
+                <a href="#/">Kembali ke katalog</a>
+            </p>
+
+            <div class="sukses" id="isi-sukses" hidden>
+                <div class="sukses-ikon" aria-hidden="true">✓</div>
+                <h1>Pesanan berhasil dibuat!</h1>
+                <p id="sukses-pemesan"></p>
+
+                <div class="struk">
+                    <div class="daftar-ringkas" id="sukses-daftar"></div>
+
+                    <div class="struk-baris struk-total">
+                        <span>Total bayar</span>
+                        <span id="sukses-total"></span>
+                    </div>
+                </div>
+
+                <div class="sukses-tombol">
+                    <a class="tombol tombol-utama" href="#/">Pesan lagi</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== MENU FOOTER ===== -->
+    <footer class="kaki">
+        <div class="wadah">
+            <div class="kaki-kolom">
+                <section>
+                    <p class="kaki-logo">
+                        <img src="image/logo.png" alt="" width="245" height="245">
+                    </p>
+
+                    <h2>TUMBAS COFFE</h2>
+
+                    <p class="kaki-info">
+                        Menyajikan Kopi dengan kenikmatan yang tiada tara. Ayo segera pesan kopi kesukaanmu
+                    </p>
+                </section>
+
+                
+                <section>
+                    <h3 class="kaki-judul">Jam Buka &amp; Kontak</h3>
+
+                    <dl class="kaki-daftar">
+                        <div><dt>Senin - Kamis</dt><dd>08.00 - 20.00 WIB</dd></div>
+                        <div><dt>Jum'at - Minggu</dt><dd>07.00 - 19.00 WIB</dd></div>
+                    </dl>
+
+
+                    <p class="kaki-info">Pesan Online, ambil di kedai</p>
+                    <p class="kaki-info">Instagram: @TumbasCoffe</p>
+                    <p class="kaki-info">TikTok: @Tumbas_Coffe223</p>
+                </section>
+
+
+
+                <section>
+                    <h2 class="kaki-judul">Metode Pembayaran</h2>
+                    <p class="kaki-info">Menerima Pembayaran Tunai &amp; Digital:</p>
+
+                    <ul class="kaki-bayar">
+                        <li>TUNAI BAYAR DI KEDAI</li>
+                        <li>QRIS</li>
+                        <li>TRANSFER</li>
+                    </ul>
+                </section>
+            </div>
+
+            <p class="kaki-hakcipta">© 2026 UKKPPLG</p>
+        </div>
+    </footer>
+
+    <!-- ===== TEMPLATE BARIS BARANG ===== -->
+    <template id="templat-baris">
+        <article class="baris-keranjang">
+            <div class="baris-gambar">
+                <img class="foto" src="" alt="">
+            </div>
+
+            <div class="baris-info">
+                <a href="#/"></a>
+                <p></p>
+            </div>
+
+            <div class="baris-aksi">
+                <div class="pengatur-jumlah">
+                    <button type="button" data-aksi="kurang" aria-label="kurangi jumlah">-</button>
+                    <span class="jumlah"></span>
+                    <button type="button" data-aksi="tambah" aria-label="tambah jumlah">+</button>
+                </div>
+
+                <p class="baris-subtotal"></p>
+
+                <button type="button" class="tombol-teks" data-aksi="hapus">Hapus</button>
+            </div>
+        </article>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
